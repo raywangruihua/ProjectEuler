@@ -10,11 +10,17 @@ Answer: 6857
 #include <cstdint>
 
 int main() {
+  // For very large primes,
+  // use Miller-Rabin to check if number is composite
+  // then use Pollard's Rho to find split numbers iteratively until every piece comes back prime
+
   uint64_t n = 600851475143;
 
   uint64_t largestPrime = 1;
   // prime factorise n
-  // largest possible prime is sqrt(n) since it must multiply itself
+  // composite number must have factor that is
+  // less than or equal to sqrt
+  // if larger than sqrt then the remaining number is prime
   for (uint64_t i = 2; i * i <= n; i++) {
     while (n % i == 0) {
       largestPrime = i;
