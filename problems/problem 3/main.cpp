@@ -8,11 +8,13 @@ Answer: 6857
 
 #include <iostream>
 #include <cstdint>
+#include "../utils.h"
 
 int main() {
   // For very large primes,
   // use Miller-Rabin to check if number is composite
   // then use Pollard's Rho to find split numbers iteratively until every piece comes back prime
+  Timer timer;
 
   uint64_t n = 600851475143;
 
@@ -28,6 +30,8 @@ int main() {
     }
   }
   if (n > 1) largestPrime = n;
+
+  timer.printns();
 
   std::cout << "Answer: " << largestPrime;
 }

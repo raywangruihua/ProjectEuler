@@ -7,10 +7,13 @@ Answer: 233168
 */
 
 #include <iostream>
+#include "../utils.h"
 
 constexpr int MAX = 999;
 
 int main() {
+  Timer timer;
+
   // find number of multiples
   int n3  = MAX / 3;
   int n5  = MAX / 5;
@@ -24,5 +27,7 @@ int main() {
   // inclusion-exclusion principle
   int sum = sum3 + sum5 - sum15;
 
-  std::cout << "Answer: " << sum;
+  timer.printns();
+
+  std::cout << "Answer: " << sum << std::endl;
 }

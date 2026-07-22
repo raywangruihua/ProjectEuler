@@ -9,6 +9,7 @@ Answer: 4613732
 */
 
 #include <iostream>
+#include "../utils.h"
 
 int main() {
   // Even Fibonacci numbers:
@@ -16,6 +17,7 @@ int main() {
   // Follow this relation:
   // e(n) = 4*e(n - 1) + e(n - 2)
   // which can be derived algebraically from the original relation
+  Timer timer;
   
   int n1 = 8; int n2 = 2;
   int sum = 2;
@@ -26,5 +28,7 @@ int main() {
     n1 = n;
   }
 
-  std::cout << "Answer: " << sum;
+  timer.printns();
+
+  std::cout << "Answer: " << sum << std::endl;
 }
